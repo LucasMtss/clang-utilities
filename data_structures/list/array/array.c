@@ -1,7 +1,7 @@
 //
 // Created by Iago on 21/12/2020.
 //
-
+#include <stdlib.h>
 #include "array.h"
 
 struct _array{
@@ -36,8 +36,8 @@ int array_is_full(Array* array){
 }
 
 int array_insert_first(Array* array, struct user usr){
-   array == NULL ? return 0;
-   array_is_full(array) ? return 0;
+   if (array == NULL) return 0;
+   if (array_is_full(array)) return 0;
    int i;
    for(i = array->length - 1; i >= 0; i--)
        array->data[i+1] = array->data[i];
@@ -47,11 +47,22 @@ int array_insert_first(Array* array, struct user usr){
 }
 
 int array_insert_end(Array* array, struct user usr){
-    if(array == NULL)
-        return 0;
-    if(array_is_full(array))
-        return 0;
+    if (array == NULL) return 0;
+    if (array_is_full(array)) return 0;
     array->data[array->length] = usr;
+    array->length++;
+    return 1;
+}
+
+int array_ordered_insert(Array* array, struct user usr){
+    if (array == NULL) return 0;
+    if (array_is_full(array)) return 0;
+    int i = 0, j;
+    while(i < array->length && array->data[i].id < usr.id)
+        i++;
+    for(j = array->length - 1; j >= i; j-- )
+        array->data[j+1] = array->data[j];
+    array->data[i] = usr;
     array->length++;
     return 1;
 }
