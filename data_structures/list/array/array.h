@@ -7,12 +7,13 @@
 
 #define MAX 100
 
-struct user{
+struct _type{
     int id;
-    char name [256];
 };
 
 typedef struct _array Array;
+
+Array* new_array();
 
 void free_array(Array*);
 
@@ -20,10 +21,16 @@ int array_length(Array*);
 
 int array_is_empty(Array*);
 
-int array_insert_first(Array* array, struct user);
+int array_insert_first(Array* array, struct _type);
 
-int array_insert_end(Array* array, struct user);
+int array_insert_last(Array* array, struct _type);
 
-int array_ordered_insert(Array* array, struct user);
+int array_insert_ordered(Array* array, struct _type);
+
+int array_remove_first(Array* array);
+
+int array_remove_last(Array* array);
+
+int array_remove_index(Array* array);
 
 #endif //CLANG_UTILITIES_LIST_ARRAY_H

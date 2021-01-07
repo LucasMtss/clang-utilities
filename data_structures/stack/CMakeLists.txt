@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.17)
-project(array)
+project(stack)
 
 set(CMAKE_C_STANDARD 99)
 
 LINK_DIRECTORIES(.)
 
-add_executable(array test.c array.c)
+add_executable(stack test.c stack.c)

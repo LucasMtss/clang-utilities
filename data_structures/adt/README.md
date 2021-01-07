@@ -1,2 +1,1 @@
-# ADT - Abstract Data Types
-# (AKA Tipo Abstrato de Dados)
+# ADT ou TADs - Abstract Data Types ( Tipo Abstrato de Dados)
