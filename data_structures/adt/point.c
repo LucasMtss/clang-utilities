@@ -14,8 +14,7 @@ struct point{
 Point* new_point(float  x , float y){
     Point* point = (Point*) malloc(sizeof(Point));
     if(point != NULL){
-        point->x = x;
-        point->y = y;
+        set_point(point, x, y);
     }
     return point;
 };
@@ -30,7 +29,8 @@ void get_point(Point* point, float* x, float* y){
 };
 
 void set_point(Point* point, const float x, const float y){
-
+    point->x = x;
+    point->y = y;
 };
 
 float get_distance(Point* a, Point* b){
