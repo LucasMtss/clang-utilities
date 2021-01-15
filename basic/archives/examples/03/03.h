@@ -14,12 +14,32 @@ typedef struct {
 int main();
 
 /*
- * Retorna o index do registro ou -1 se não existir funcionário com a matrícula fornecida.
+ * Retorna
  * */
-int search(FILE*, int);
+void create(FILE*);
 
 /*
  * Retorna
  * */
-int signup(FILE*);
+void read(FILE*);
+
+/*
+ * Retorna
+ * */
+void update(FILE*);
+
+/*
+ * Retorna
+ * */
+void list(FILE*);
+
+/*
+ * Retorna
+ * */
+void delete(FILE*);
+
+/*
+ * Retorna o index do registro ou -1 se não existir funcionário com a matrícula fornecida.
+ * */
+int search(FILE*, int);
 #endif //EXAMPLES_03_H
